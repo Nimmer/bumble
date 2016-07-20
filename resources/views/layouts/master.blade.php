@@ -15,8 +15,10 @@
     @foreach ($cssAssets as $asset)
         <link rel="stylesheet" href="{{ asset($asset) }}">
     @endforeach
+
 </head>
 <body>
+<script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
     <header class="main-header">
         <div class="main-header__wrap">
             <h1 class="main-logo"><a href="{{ route('bumble.dashboard') }}" class="main-logo__link">
