@@ -3,6 +3,7 @@
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingTrait;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Log;
 use Schema;
 use Monarkee\Bumble\Exceptions\TableNotFoundException;
 use ReflectionClass;
@@ -278,7 +279,8 @@ abstract class BumbleModel extends Model
     {
         if (!Schema::hasTable($this->getTable()))
         {
-            throw new TableNotFoundException("The specified table '{$this->getTable()}' doesn't exist.");
+           // throw new TableNotFoundException("The specified table '{$this->getTable()}' doesn't exist.");
+            Log::warning("The specified table '{$this->getTable()}' doesn't exist.");
         }
 
         return true;
