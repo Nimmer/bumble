@@ -1,6 +1,6 @@
 @if (Session::has('success'))
     <div id="success" class="message--success js-message js-hide-message">
-        <p class="message__text">{{ Session::get('success') }}</p>
+        <p class="message__text">{!! Session::get('success') !!} </p>
         <a href="#" class="message__btn-close js-close-message">&times;</a>
     </div>
 @endif
